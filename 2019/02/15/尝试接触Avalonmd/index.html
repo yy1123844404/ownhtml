@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Avalon | New Object</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="这段时间做了一下针对IE 浏览器的问题，然后发现很多不兼容IE的地方 很多的框架也不支持IE  然后去找了找 发现一歌有趣的框架 ヽ(。_°)ノ  avalon 迷你框架、使用简单、有较好的兼容性、注重性能、没有依赖 PS: 支持IE6+!!!!! 这才是重点 大概的看了一下这个框架 感觉和现在常用的VUE 和 AngularJS 有点儿像 首先从基本的开始吧 https://cdn.static">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Avalon">
+<meta property="og:url" content="http://sikii.cc/2019/02/15/尝试接触Avalonmd/index.html">
+<meta property="og:site_name" content="New Object">
+<meta property="og:description" content="这段时间做了一下针对IE 浏览器的问题，然后发现很多不兼容IE的地方 很多的框架也不支持IE  然后去找了找 发现一歌有趣的框架 ヽ(。_°)ノ  avalon 迷你框架、使用简单、有较好的兼容性、注重性能、没有依赖 PS: 支持IE6+!!!!! 这才是重点 大概的看了一下这个框架 感觉和现在常用的VUE 和 AngularJS 有点儿像 首先从基本的开始吧 https://cdn.static">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-15T02:54:50.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Avalon">
+<meta name="twitter:description" content="这段时间做了一下针对IE 浏览器的问题，然后发现很多不兼容IE的地方 很多的框架也不支持IE  然后去找了找 发现一歌有趣的框架 ヽ(。_°)ノ  avalon 迷你框架、使用简单、有较好的兼容性、注重性能、没有依赖 PS: 支持IE6+!!!!! 这才是重点 大概的看了一下这个框架 感觉和现在常用的VUE 和 AngularJS 有点儿像 首先从基本的开始吧 https://cdn.static">
+  
+    <link rel="alternate" href="/atom.xml" title="New Object" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/archives" title="">归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-尝试接触Avalonmd" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      Avalon
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/15/尝试接触Avalonmd/" class="article-date">
+  <time datetime="2019-02-15T02:32:15.617Z" itemprop="datePublished">2019-02-15</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>这段时间做了一下针对IE 浏览器的问题，然后发现很多不兼容IE的地方</p>
+<p>很多的框架也不支持IE  然后去找了找 发现一歌有趣的框架 ヽ(。_°)ノ  avalon</p>
+<p>迷你框架、使用简单、有较好的兼容性、注重性能、没有依赖</p>
+<p>PS: 支持IE6+!!!!! 这才是重点</p>
+<p>大概的看了一下这个框架 感觉和现在常用的VUE 和 AngularJS 有点儿像</p>
+<p>首先从基本的开始吧</p>
+<p><code>https://cdn.staticfile.org/avalon.js/2.2.4/avalon.js</code></p>
+<p>那我们开始写程序员的标配hello-word<br><a id="more"></a></p>
+<pre><code>&lt;div ms-controller=&quot;test&quot;&gt;
+  &lt;input type=&quot;test&quot; ms-duplex=&quot;@name&quot;/&gt;
+  &lt;p&gt;hello,{{@name}}&lt;/p&gt;
+  &lt;ul&gt;
+      &lt;li ms-for=&quot;(item,key) in @array&quot;&gt;{{item}}--{{key}}&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre><p>这个是简单的内容 但是这样是不行的   我们还需要相对应的数据 （个人觉得这就有点儿类似angular）  </p>
+<pre><code>&lt;script&gt;
+  var vm = avalon.define({
+      $id:&quot;test&quot;,
+    name:&quot;world&quot;,
+    array:[123,456,789]
+  })
+&lt;/script&gt;
+</code></pre><p>这样我们的数据就能显示在页面上了</p>
+<p>这时候你可能会问了，上面这些标签里面的东西是什么啊</p>
+<p>别急 这下我来和你说</p>
+<pre><code>1. ms-controller ---------------- 这条指令就是绑定对象 和 script 标签里面的$id 相对应
+2. ms-duplex -------------------- 这条指令就是数据的双向绑定 类似 v-model(Vue)
+3. {{}} ------------------------- 这条指令就是和vue的没有什么区别啦，绑定数据
+4. ms-for ----------------------- 这条指令就是循环数组
+5. @ ---------------------------- 我想这可能是这avalon的特色吧 @ + &apos;avalon.define&apos;里面的字段 在加上{{就能把数据输出到页面上}}
+</code></pre>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/02/15/关于非表单元素的监听/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            关于非表单元素的监听
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/02/15/main/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Markdow</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        恰逢
+      
+    </h3>
+    <p class="avatar-slogan">
+      花 ♂ Q，只要給我十萬元，我...
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/15/2018的一些总结吧/">2018的一些总结吧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/H5的视频解决方案/">H5与视频的那些事</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/关于非表单元素的监听/">关于非表单元素的监听</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/尝试接触Avalonmd/">Avalon</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/main/">Markdow</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 恰逢 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+    <a href="http://www.beianbeian.com/beianxinxi/bc7b14f2-dafd-4082-ab82-870d48c905a5.html">蜀ICP备17041162号-1</a>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
