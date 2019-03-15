@@ -45,11 +45,57 @@
       
         <a class="nav-item" href="/archives" title="">归档</a>
       
+        <a class="nav-item" href="/about" title="">个人</a>
+      
     </nav>
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
+  
+    <article id="post-vuex Getter" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/11/vuex Getter/">vuex getter</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/03/11/vuex Getter/" class="article-date">
+  <time datetime="2019-03-11T08:42:08.591Z" itemprop="datePublished">2019-03-11</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>emmmm，这都3月了 还是没有记录一些东西，感觉…<br>就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.state.todos.filter(todo =&gt; todo.done).length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>如果有多个组件需要用到这种属性， 那么我们需要复制这个函数，或者抽取到一个共享函数然后在多处导入它，无论哪种方式 我们都是很理想。</p>
+<p>Vuex 允许我们子啊store中定义‘getter’ (我们可以认为是store的计算属性) 就像计算机一样，getter的返回值会根据他的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算</p>
+<h2 id="Getter-接受state作为其第一个参数"><a href="#Getter-接受state作为其第一个参数" class="headerlink" title="Getter 接受state作为其第一个参数"></a>Getter 接受state作为其第一个参数</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; id: 1, text: &apos;...&apos;, done: true &#125;,</span><br><span class="line">      &#123; id: 2, text: &apos;...&apos;, done: false &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    doneTodos: state =&gt; &#123;</span><br><span class="line">      return state.todos.filter(todo =&gt; todo.done)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h2 id="通过属性访问"><a href="#通过属性访问" class="headerlink" title="通过属性访问"></a>通过属性访问</h2><p>Getter 会暴露为 store.getters 对象，你可以以属性的形式访问这些值：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.getters.doneTodos // -&gt; [&#123; id: 1, text: &apos;...&apos;, done: true &#125;]</span><br></pre></td></tr></table></figure></div></p>
+<p>Getter 也可以接受其他 getter 作为第二个参数：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getters: &#123;</span><br><span class="line">  // ...</span><br><span class="line">  doneTodosCount: (state, getters) =&gt; &#123;</span><br><span class="line">    return getters.doneTodos.length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.getters.doneTodosCount // -&gt; 1</span><br></pre></td></tr></table></figure></div>
+<p>我们可以很容易地在任何组件中使用它：</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.getters.doneTodosCount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
   
     <article id="post-2018的一些总结吧" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
@@ -433,55 +479,12 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
 </article>
 
   
-    <article id="post-vue-cli使用(一)" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/vue-cli使用(一)/">关于VUE-cli的一些简单的使用(一)</a>
-    </h1>
-  
 
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/vue-cli使用(一)/" class="article-date">
-  <time datetime="2019-02-15T02:22:25.586Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-    
-  </div>
-  
 
-  <div class="article-inner">
+  <nav id="page-nav">
     
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><p>在说vue-cli之前,我们先来聊一聊vue.</p>
-<p>vue是什么? </p>
-<p>是一套用于构建用户界面的渐进式框架.Vue可以用于自底向上逐层应用.其核心库只关注视图层,上手快,还便于整合第三方库或项目[这里就不做过多的描述,可以去看看官文]</p>
-<p>Vue的核心思想:组件化和数据驱动.</p>
-<p>什么是组件化? </p>
-<p>组件化就是将一个整体合理的拆分为一个一个小块(这就是组件),组件可以重复使用.</p>
-<p>数据驱动是前端的未来发展方向,释放了对DOM的操作,让dom随着数据的变化自然而然的变化(大佬说的,记下来),所以我们操作的就是数据</p>
-<p>Vue-cli是快速构建单页面的脚手架.如果在此之前,你选择使用vue-cli来入门的话,就选择引入js文件, [不是别的意思,只是这里使用的东西很多,你没有使用过vue的话,很容易走上一条 (从还没入门到放弃)的道路]</p>
-<p>然后,我们来构建一个很简单的项目吧<br>
-        
-          </p><p class="article-more-link">
-            <a href="/2019/02/15/vue-cli使用(一)/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 
 </section>
@@ -515,7 +518,7 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
   <div class="widget-box">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
     </div>
   </div>
 
@@ -525,6 +528,10 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/11/vuex Getter/">vuex getter</a>
+          </li>
         
           <li>
             <a href="/2019/02/15/2018的一些总结吧/">2018的一些总结吧</a>
@@ -540,10 +547,6 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
         
           <li>
             <a href="/2019/02/15/尝试接触Avalonmd/">Avalon</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/15/main/">Markdow</a>
           </li>
         
       </ul>
@@ -581,6 +584,8 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
     <a href="/" class="mobile-nav-link">首页</a>
   
     <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">个人</a>
   
   <div class="mobile-nav-img  mobile-nav-bottom"></div>
 </nav>    

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>vuex getter | New Object</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="emmmm，这都3月了 还是没有记录一些东西，感觉…就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数12345computed: &amp;#123;  doneTodosCount () &amp;#123;    return this.$store.state.todos.filter(todo =&amp;gt; todo.done).length  &amp;#125;&amp;#125">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex getter">
+<meta property="og:url" content="http://sikii.cc/2019/03/11/vuex Getter/index.html">
+<meta property="og:site_name" content="New Object">
+<meta property="og:description" content="emmmm，这都3月了 还是没有记录一些东西，感觉…就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数12345computed: &amp;#123;  doneTodosCount () &amp;#123;    return this.$store.state.todos.filter(todo =&amp;gt; todo.done).length  &amp;#125;&amp;#125">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-15T07:19:34.230Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuex getter">
+<meta name="twitter:description" content="emmmm，这都3月了 还是没有记录一些东西，感觉…就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数12345computed: &amp;#123;  doneTodosCount () &amp;#123;    return this.$store.state.todos.filter(todo =&amp;gt; todo.done).length  &amp;#125;&amp;#125">
+  
+    <link rel="alternate" href="/atom.xml" title="New Object" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/archives" title="">归档</a>
+      
+        <a class="nav-item" href="/about" title="">个人</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-vuex Getter" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      vuex getter
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/03/11/vuex Getter/" class="article-date">
+  <time datetime="2019-03-11T08:42:08.591Z" itemprop="datePublished">2019-03-11</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>emmmm，这都3月了 还是没有记录一些东西，感觉…<br>就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.state.todos.filter(todo =&gt; todo.done).length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<p>如果有多个组件需要用到这种属性， 那么我们需要复制这个函数，或者抽取到一个共享函数然后在多处导入它，无论哪种方式 我们都是很理想。</p>
+<p>Vuex 允许我们子啊store中定义‘getter’ (我们可以认为是store的计算属性) 就像计算机一样，getter的返回值会根据他的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算</p>
+<h2 id="Getter-接受state作为其第一个参数"><a href="#Getter-接受state作为其第一个参数" class="headerlink" title="Getter 接受state作为其第一个参数"></a>Getter 接受state作为其第一个参数</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; id: 1, text: &apos;...&apos;, done: true &#125;,</span><br><span class="line">      &#123; id: 2, text: &apos;...&apos;, done: false &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    doneTodos: state =&gt; &#123;</span><br><span class="line">      return state.todos.filter(todo =&gt; todo.done)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h2 id="通过属性访问"><a href="#通过属性访问" class="headerlink" title="通过属性访问"></a>通过属性访问</h2><p>Getter 会暴露为 store.getters 对象，你可以以属性的形式访问这些值：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.getters.doneTodos // -&gt; [&#123; id: 1, text: &apos;...&apos;, done: true &#125;]</span><br></pre></td></tr></table></figure></div></p>
+<p>Getter 也可以接受其他 getter 作为第二个参数：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getters: &#123;</span><br><span class="line">  // ...</span><br><span class="line">  doneTodosCount: (state, getters) =&gt; &#123;</span><br><span class="line">    return getters.doneTodos.length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.getters.doneTodosCount // -&gt; 1</span><br></pre></td></tr></table></figure></div>
+<p>我们可以很容易地在任何组件中使用它：</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.getters.doneTodosCount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/02/15/2018的一些总结吧/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">2018的一些总结吧</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'kono',
+  repo: 'articles',
+  oauth: {
+    client_id: '977c601ee2ffa3cf946e',
+    client_secret: '85e17effbf1a27481baa93a6bdc5a6d62ac62c45',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        恰逢
+      
+    </h3>
+    <p class="avatar-slogan">
+      花 ♂ Q，只要給我十萬元，我...
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/11/vuex Getter/">vuex getter</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/2018的一些总结吧/">2018的一些总结吧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/H5的视频解决方案/">H5与视频的那些事</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/关于非表单元素的监听/">关于非表单元素的监听</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/尝试接触Avalonmd/">Avalon</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 恰逢 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+    <a href="http://www.beianbeian.com/beianxinxi/bc7b14f2-dafd-4082-ab82-870d48c905a5.html">蜀ICP备17041162号-1</a>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">个人</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

@@ -5,22 +5,18 @@
   
 
   
-  <title>2018的一些总结吧 | New Object</title>
+  <title>New Object</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="说着说着2018年就这么没有了，然后我们到了2019… 说实话，这时间过得真的快，上一次更新这东西好像在10月份来着(绝对不是因为我懒) 都2019年了，现在才对2018总结 1.我接了我的第一份工作2.写了自己的第一个项目3.写了自己的第一个博客4.买了自己的第一台电脑5.&amp;nbsp;…有好多啊 不想写了总的来说2018自己学到了很多，也见识到了很多有些好的，有些不好的 我也不好评判 仁者见仁智">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2018的一些总结吧">
-<meta property="og:url" content="http://sikii.cc/2019/02/15/2018的一些总结吧/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="New Object">
+<meta property="og:url" content="http://sikii.cc/page/2/index.html">
 <meta property="og:site_name" content="New Object">
-<meta property="og:description" content="说着说着2018年就这么没有了，然后我们到了2019… 说实话，这时间过得真的快，上一次更新这东西好像在10月份来着(绝对不是因为我懒) 都2019年了，现在才对2018总结 1.我接了我的第一份工作2.写了自己的第一个项目3.写了自己的第一个博客4.买了自己的第一台电脑5.&amp;nbsp;…有好多啊 不想写了总的来说2018自己学到了很多，也见识到了很多有些好的，有些不好的 我也不好评判 仁者见仁智">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-15T03:11:47.505Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018的一些总结吧">
-<meta name="twitter:description" content="说着说着2018年就这么没有了，然后我们到了2019… 说实话，这时间过得真的快，上一次更新这东西好像在10月份来着(绝对不是因为我懒) 都2019年了，现在才对2018总结 1.我接了我的第一份工作2.写了自己的第一个项目3.写了自己的第一个博客4.买了自己的第一台电脑5.&amp;nbsp;…有好多啊 不想写了总的来说2018自己学到了很多，也见识到了很多有些好的，有些不好的 我也不好评判 仁者见仁智">
+<meta name="twitter:title" content="New Object">
   
     <link rel="alternate" href="/atom.xml" title="New Object" type="application/atom+xml">
   
@@ -55,92 +51,64 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-2018的一些总结吧" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-vue-cli使用(一)" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
-    <h1 class="article-title" itemprop="name">
-      2018的一些总结吧
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/15/vue-cli使用(一)/">关于VUE-cli的一些简单的使用(一)</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/02/15/2018的一些总结吧/" class="article-date">
-  <time datetime="2019-02-15T02:56:03.710Z" itemprop="datePublished">2019-02-15</time>
+    <a href="/2019/02/15/vue-cli使用(一)/" class="article-date">
+  <time datetime="2019-02-15T02:22:25.586Z" itemprop="datePublished">2019-02-15</time>
 </a>
     
     
   </div>
-  
-    <span id="busuanzi_container_page_pv">
-      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-    </span>
   
 
   <div class="article-inner">
     
     <div class="article-content article-content-doorframe" itemprop="articleBody">
       
-        <p>说着说着2018年就这么没有了，然后我们到了2019…</p>
-<p>说实话，这时间过得真的快，上一次更新这东西好像在10月份来着(<del>绝对不是因为我懒</del>)</p>
-<p>都2019年了，现在才对2018总结</p>
-<p>1.我接了我的第一份工作<br>2.写了自己的第一个项目<br>3.写了自己的第一个博客<br>4.买了自己的第一台电脑<br>5.&nbsp;…<br>有好多啊 不想写了<br>总的来说2018自己学到了很多，也见识到了很多<br>有些好的，有些不好的 我也不好评判 仁者见仁智者见智吧  </p>
-
+        <h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><p>在说vue-cli之前,我们先来聊一聊vue.</p>
+<p>vue是什么? </p>
+<p>是一套用于构建用户界面的渐进式框架.Vue可以用于自底向上逐层应用.其核心库只关注视图层,上手快,还便于整合第三方库或项目[这里就不做过多的描述,可以去看看官文]</p>
+<p>Vue的核心思想:组件化和数据驱动.</p>
+<p>什么是组件化? </p>
+<p>组件化就是将一个整体合理的拆分为一个一个小块(这就是组件),组件可以重复使用.</p>
+<p>数据驱动是前端的未来发展方向,释放了对DOM的操作,让dom随着数据的变化自然而然的变化(大佬说的,记下来),所以我们操作的就是数据</p>
+<p>Vue-cli是快速构建单页面的脚手架.如果在此之前,你选择使用vue-cli来入门的话,就选择引入js文件, [不是别的意思,只是这里使用的东西很多,你没有使用过vue的话,很容易走上一条 (从还没入门到放弃)的道路]</p>
+<p>然后,我们来构建一个很简单的项目吧<br>
+        
+          </p><p class="article-more-link">
+            <a href="/2019/02/15/vue-cli使用(一)/#more">阅读全文</a>
+          </p>
+        
       
     </div>
     
-      <footer class="article-footer">
-        完
-      </footer>
-    
   </div>
-  
-    
-<nav id="article-nav">
-  <div class="article-nav-block">
-    
-      <a href="/2019/03/11/vuex Getter/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            vuex getter
-          
-        </div>
-      </a>
-    
-  </div>
-  <div class="article-nav-block">
-    
-      <a href="/2019/02/15/H5的视频解决方案/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">H5与视频的那些事</div>
-        <strong class="article-nav-caption"></strong>
-      </a>
-    
-  </div>
-</nav>
-
-    
-<div id="gitmentContainer"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  owner: 'kono',
-  repo: 'articles',
-  oauth: {
-    client_id: '977c601ee2ffa3cf946e',
-    client_secret: '85e17effbf1a27481baa93a6bdc5a6d62ac62c45',
-  },
-})
-gitment.render('gitmentContainer')
-</script>
-
   
   
 </article>
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
 </section>
         <aside id="sidebar">
   
