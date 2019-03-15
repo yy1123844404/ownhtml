@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="New Object">
 <meta property="og:description" content="emmmm，这都3月了 还是没有记录一些东西，感觉…就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数12345computed: &amp;#123;  doneTodosCount () &amp;#123;    return this.$store.state.todos.filter(todo =&amp;gt; todo.done).length  &amp;#125;&amp;#125">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-15T07:19:34.230Z">
+<meta property="og:updated_time" content="2019-03-15T08:19:36.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex getter">
 <meta name="twitter:description" content="emmmm，这都3月了 还是没有记录一些东西，感觉…就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数12345computed: &amp;#123;  doneTodosCount () &amp;#123;    return this.$store.state.todos.filter(todo =&amp;gt; todo.done).length  &amp;#125;&amp;#125">
@@ -87,6 +87,7 @@
         <p>emmmm，这都3月了 还是没有记录一些东西，感觉…<br>就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.state.todos.filter(todo =&gt; todo.done).length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
 <p>如果有多个组件需要用到这种属性， 那么我们需要复制这个函数，或者抽取到一个共享函数然后在多处导入它，无论哪种方式 我们都是很理想。</p>
 <p>Vuex 允许我们子啊store中定义‘getter’ (我们可以认为是store的计算属性) 就像计算机一样，getter的返回值会根据他的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算</p>
+<a id="more"></a>
 <h2 id="Getter-接受state作为其第一个参数"><a href="#Getter-接受state作为其第一个参数" class="headerlink" title="Getter 接受state作为其第一个参数"></a>Getter 接受state作为其第一个参数</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; id: 1, text: &apos;...&apos;, done: true &#125;,</span><br><span class="line">      &#123; id: 2, text: &apos;...&apos;, done: false &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    doneTodos: state =&gt; &#123;</span><br><span class="line">      return state.todos.filter(todo =&gt; todo.done)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
 <h2 id="通过属性访问"><a href="#通过属性访问" class="headerlink" title="通过属性访问"></a>通过属性访问</h2><p>Getter 会暴露为 store.getters 对象，你可以以属性的形式访问这些值：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.getters.doneTodos // -&gt; [&#123; id: 1, text: &apos;...&apos;, done: true &#125;]</span><br></pre></td></tr></table></figure></div></p>
 <p>Getter 也可以接受其他 getter 作为第二个参数：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getters: &#123;</span><br><span class="line">  // ...</span><br><span class="line">  doneTodosCount: (state, getters) =&gt; &#123;</span><br><span class="line">    return getters.doneTodos.length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
@@ -124,7 +125,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  owner: 'kono',
+  owner: 'yy1123844404',
   repo: 'articles',
   oauth: {
     client_id: '977c601ee2ffa3cf946e',
