@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ES7 + ES8 一些用法 | New Object</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="ES7Array.prototype.includes() includes()作用，是查找一个值在不在数组里，若是存在则返回true,不存在返回false  1.基本用法： 12[&amp;apos;a&amp;apos;,&amp;apos;b&amp;apos;,&amp;apos;c&amp;apos;,&amp;apos;d&amp;apos;].includes(&amp;apos;a&amp;apos;)     //true[&amp;apos;a&amp;apos;,&amp;ap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES7 + ES8 一些用法">
+<meta property="og:url" content="http://sikii.cc/2019/03/18/es7+es8/index.html">
+<meta property="og:site_name" content="New Object">
+<meta property="og:description" content="ES7Array.prototype.includes() includes()作用，是查找一个值在不在数组里，若是存在则返回true,不存在返回false  1.基本用法： 12[&amp;apos;a&amp;apos;,&amp;apos;b&amp;apos;,&amp;apos;c&amp;apos;,&amp;apos;d&amp;apos;].includes(&amp;apos;a&amp;apos;)     //true[&amp;apos;a&amp;apos;,&amp;ap">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-18T01:46:55.514Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES7 + ES8 一些用法">
+<meta name="twitter:description" content="ES7Array.prototype.includes() includes()作用，是查找一个值在不在数组里，若是存在则返回true,不存在返回false  1.基本用法： 12[&amp;apos;a&amp;apos;,&amp;apos;b&amp;apos;,&amp;apos;c&amp;apos;,&amp;apos;d&amp;apos;].includes(&amp;apos;a&amp;apos;)     //true[&amp;apos;a&amp;apos;,&amp;ap">
+  
+    <link rel="alternate" href="/atom.xml" title="New Object" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/archives" title="">归档</a>
+      
+        <a class="nav-item" href="/about" title="">个人</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-es7+es8" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      ES7 + ES8 一些用法
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/03/18/es7+es8/" class="article-date">
+  <time datetime="2019-03-18T01:18:36.981Z" itemprop="datePublished">2019-03-18</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="ES7"><a href="#ES7" class="headerlink" title="ES7"></a>ES7</h1><h2 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes()"></a>Array.prototype.includes()</h2><blockquote>
+<p>includes()作用，是查找一个值在不在数组里，若是存在则返回true,不存在返回false</p>
+</blockquote>
+<p>1.基本用法：</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;)     //true</span><br><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;g&apos;)     //false</span><br></pre></td></tr></table></figure></div>
+<p>2.includes()可以接受两个参数：要搜索的值和搜索的开始索引</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;)       //true</span><br><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;,0)     //true</span><br><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;,2)     //false</span><br></pre></td></tr></table></figure></div>
+<a id="more"></a>
+<p>3.与indexOf()比较</p>
+<p>在有些时候是等效的<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;)        //true</span><br><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].indexOf(&apos;a&apos;) &gt; -1    //true</span><br><span class="line"></span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">var a = 1</span><br><span class="line">arr.includes(a)    //true</span><br><span class="line">arr.indexOf(a)     //0</span><br></pre></td></tr></table></figure></div></p>
+<ul>
+<li><p>在判断+0 与-0时，被认为是相同的。</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, +0, 3, 4].includes(-0)    //true</span><br><span class="line">[1, +0, 3, 4].indexOf(-0)     //1</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>只能判断简单类型的数据，对于复杂类型的数据，比如对象类型的数组，二维数组，这些，是无法判断的.</p>
+</li>
+</ul>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, [2, 3], 4]</span><br><span class="line">arr.includes([2, 3])   //false</span><br><span class="line">arr.indexOf([2, 3])    //-1</span><br></pre></td></tr></table></figure></div>
+<h2 id="优缺点比较"><a href="#优缺点比较" class="headerlink" title="优缺点比较"></a>优缺点比较</h2><p>1.includes()直接返回布尔值，可以直接判断该数组中 是否有这个值，而indexOf()返回的是索引<br>2.这两个都是采用===来比较的，但是这两个对于NaN的处理是不同的<br>在js中<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">let demo = [1, NaN, 2, 3]</span><br><span class="line"></span><br><span class="line">demo.indexOf(NaN)        //-1</span><br><span class="line">demo.includes(NaN)       //true</span><br></pre></td></tr></table></figure></div></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>由于它对NaN的处理方式与indexOf不同，假如你只想知道某个值是否在数组中而并不关心它的索引位置，建议使用includes()。如果你想获取一个值在数组中的位置，那么你只能使用indexOf方法。</p>
+</blockquote>
+<h1 id="ES8"><a href="#ES8" class="headerlink" title="ES8"></a>ES8</h1><h2 id="async-await"><a href="#async-await" class="headerlink" title="async await"></a>async await</h2><p>首先我们拆开来看这个  async 表示异步 await表示等待<br>async function(){} 异步函数<br>相信大家有过这样的经历，有些时候我们需要很多的请求操作，然后就有了多重嵌套，然后就有这个名词 “回调地狱”  </p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.$http.jsonp(&apos;/login&apos;, (res) =&gt; &#123;</span><br><span class="line">  this.$http.jsonp(&apos;/getInfo&apos;, (info) =&gt; &#123;</span><br><span class="line">    // do something</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<p>对于这种情况，es6的Promise,把回调函数的嵌套改成了链式调用<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var promise = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">  this.login(resolve);</span><br><span class="line">&#125;)</span><br><span class="line">.then(() =&gt; &#123;</span><br><span class="line">  this.getInfo()</span><br><span class="line">&#125;)</span><br><span class="line">.catch(() =&gt; &#123;</span><br><span class="line">  console.log(&apos;Error&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div></p>
+<p>同样，我们在使用异步函数的时候 我们需要先声明  </p>
+<ul>
+<li><p>函数声明： <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><figcaption><span>function foo() &#123;&#125; ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 函数表达式： ``` const foo = async function() &#123;&#125;</span><br></pre></td></tr></table></figure></div></p>
+</li>
+<li><p>对象的方式： <div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><figcaption><span>obj </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 箭头函数： ``` const foo = async () =&gt; &#123;&#125;</span><br></pre></td></tr></table></figure></div></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/03/11/vuex Getter/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">vuex getter</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'yy1123844404',
+  repo: 'articles',
+  oauth: {
+    client_id: '977c601ee2ffa3cf946e',
+    client_secret: '85e17effbf1a27481baa93a6bdc5a6d62ac62c45',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        恰逢
+      
+    </h3>
+    <p class="avatar-slogan">
+      花 ♂ Q，只要給我十萬元，我...
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/18/es7+es8/">ES7 + ES8 一些用法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/11/vuex Getter/">vuex getter</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/2018的一些总结吧/">2018的一些总结吧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/H5的视频解决方案/">H5与视频的那些事</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/15/关于非表单元素的监听/">关于非表单元素的监听</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 恰逢 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+    <a href="http://www.beianbeian.com/beianxinxi/bc7b14f2-dafd-4082-ab82-870d48c905a5.html">蜀ICP备17041162号-1</a>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">个人</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
