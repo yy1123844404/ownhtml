@@ -5,20 +5,20 @@
   
 
   
-  <title>New Object</title>
+  <title>浅缘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   <meta property="og:type" content="website">
-<meta property="og:title" content="New Object">
+<meta property="og:title" content="浅缘">
 <meta property="og:url" content="http://sikii.cc/index.html">
-<meta property="og:site_name" content="New Object">
+<meta property="og:site_name" content="浅缘">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="New Object">
+<meta name="twitter:title" content="浅缘">
   
-    <link rel="alternate" href="/atom.xml" title="New Object" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="浅缘" type="application/atom+xml">
   
   
     <link rel="icon" href="/images/default-avatar.jpeg">
@@ -41,11 +41,11 @@
   <div class="head-box global-width">
     <nav class="nav-box nav-right">
       
-        <a class="nav-item" href="/" title="">首页</a>
+        <a class="nav-item" href="/" title>首页</a>
       
-        <a class="nav-item" href="/archives" title="">归档</a>
+        <a class="nav-item" href="/archives" title>归档</a>
       
-        <a class="nav-item" href="/about" title="">个人</a>
+        <a class="nav-item" href="/about" title>个人</a>
       
     </nav>
   </div>
@@ -53,356 +53,21 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
-    <article id="post-es7+es8" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-關於UI" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/18/es7+es8/">ES7 + ES8 一些用法</a>
+      <a class="article-title" href="/2019/04/08/關於UI/">關於UI框架的選擇</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/03/18/es7+es8/" class="article-date">
-  <time datetime="2019-03-18T01:18:36.981Z" itemprop="datePublished">2019-03-18</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <h1 id="ES7"><a href="#ES7" class="headerlink" title="ES7"></a>ES7</h1><h2 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes()"></a>Array.prototype.includes()</h2><blockquote>
-<p>includes()作用，是查找一个值在不在数组里，若是存在则返回true,不存在返回false</p>
-</blockquote>
-<p>1.基本用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;)     //true</span><br><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;g&apos;)     //false</span><br></pre></td></tr></table></figure>
-<p>2.includes()可以接受两个参数：要搜索的值和搜索的开始索引</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;)       //true</span><br><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;,0)     //true</span><br><span class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;].includes(&apos;a&apos;,2)     //false</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/18/es7+es8/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-vuex Getter" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/11/vuex Getter/">vuex getter</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/03/11/vuex Getter/" class="article-date">
-  <time datetime="2019-03-11T08:42:08.591Z" itemprop="datePublished">2019-03-11</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>emmmm，这都3月了 还是没有记录一些东西，感觉…<br>就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.state.todos.filter(todo =&gt; todo.done).length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果有多个组件需要用到这种属性， 那么我们需要复制这个函数，或者抽取到一个共享函数然后在多处导入它，无论哪种方式 我们都是很理想。</p>
-<p>Vuex 允许我们子啊store中定义‘getter’ (我们可以认为是store的计算属性) 就像计算机一样，getter的返回值会根据他的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/11/vuex Getter/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-2018的一些总结吧" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/2018的一些总结吧/">2018的一些总结吧</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/2018的一些总结吧/" class="article-date">
-  <time datetime="2019-02-15T02:56:03.710Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>说着说着2018年就这么没有了，然后我们到了2019…</p>
-<p>说实话，这时间过得真的快，上一次更新这东西好像在10月份来着(<del>绝对不是因为我懒</del>)</p>
-<p>都2019年了，现在才对2018总结</p>
-<p>1.我接了我的第一份工作<br>2.写了自己的第一个项目<br>3.写了自己的第一个博客<br>4.买了自己的第一台电脑<br>5.&nbsp;…<br>有好多啊 不想写了<br>总的来说2018自己学到了很多，也见识到了很多<br>有些好的，有些不好的 我也不好评判 仁者见仁智者见智吧  </p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-H5的视频解决方案" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/H5的视频解决方案/">H5与视频的那些事</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/H5的视频解决方案/" class="article-date">
-  <time datetime="2019-02-15T02:32:15.767Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>不多说上链接<br><a href="https://blog.csdn.net/joyce_lcy/article/details/81391142" title="看我" target="_blank" rel="noopener">https://blog.csdn.net/joyce_lcy/article/details/81391142</a></p>
-<p>有疑问见标题，主要是 mobile video内联播放</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-关于非表单元素的监听" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/关于非表单元素的监听/">关于非表单元素的监听</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/关于非表单元素的监听/" class="article-date">
-  <time datetime="2019-02-15T02:32:15.629Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>说到监听事件 很多人都是第一反应 addEventListener 对这个是一种方法，但是有局限的  这个主要针对于表单元素 但是对于非表单元素呢？</p>
-<p>所以我重点要讲的针对于非表单元素的监听事件 DOMNodeInserted </p>
-<p>(我跟你讲这个东西可好玩了)  </p>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;selector&quot;).bind(&quot;DOMNodeInserted&quot;,function(e)&#123;</span><br><span class="line">    alert(&quot;我被监听到啦&quot;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
-<p>代码如上 这样就被监听到了</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-尝试接触Avalonmd" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/尝试接触Avalonmd/">Avalon</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/尝试接触Avalonmd/" class="article-date">
-  <time datetime="2019-02-15T02:32:15.617Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>这段时间做了一下针对IE 浏览器的问题，然后发现很多不兼容IE的地方</p>
-<p>很多的框架也不支持IE  然后去找了找 发现一歌有趣的框架 ヽ(。_°)ノ  avalon</p>
-<p>迷你框架、使用简单、有较好的兼容性、注重性能、没有依赖</p>
-<p>PS: 支持IE6+!!!!! 这才是重点</p>
-<p>大概的看了一下这个框架 感觉和现在常用的VUE 和 AngularJS 有点儿像</p>
-<p>首先从基本的开始吧</p>
-<p><code>https://cdn.staticfile.org/avalon.js/2.2.4/avalon.js</code></p>
-<p>那我们开始写程序员的标配hello-word<br>
-        
-          </p><p class="article-more-link">
-            <a href="/2019/02/15/尝试接触Avalonmd/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-main" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/main/">Markdow</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/main/" class="article-date">
-  <time datetime="2019-02-15T02:22:25.703Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>我也不是很清楚markdown的语法 只能记得一点儿或者能用的</p>
-<p>没记错两个回车表示换行</p>
-<h2 id="两个-号表示的是h2的样子"><a href="#两个-号表示的是h2的样子" class="headerlink" title="两个#号表示的是h2的样子"></a>两个#号表示的是h2的样子</h2><h1 id="一个-的话表示h1"><a href="#一个-的话表示h1" class="headerlink" title="一个#的话表示h1"></a>一个#的话表示h1</h1><p>没有的话 就是正常的</p>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
-<p>上面这种就是使用【数字1左边，tab按键上面的那个】这种一共6个 对齐分布</p>
-<p>More info: <a href="https://www.baidu.com" target="_blank" rel="noopener">Writing</a></p>
-<p>蓝色的这种 应该是</p>
-<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Writing](https://www.baidu.com)</span><br></pre></td></tr></table></figure></div>
-<p>可以解释为A标签</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-庆祝博客" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/庆祝博客/">雨燕博客正式迁移了</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/庆祝博客/" class="article-date">
-  <time datetime="2019-02-15T02:22:25.682Z" itemprop="datePublished">2019-02-15</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-doorframe" itemprop="articleBody">
-      
-        <p>自从上次服务器出现问题之后，就暂停了一段时间，现在我们的博客又正式的上线了，关于文章这类，还需要慢慢改进 由于刚迁移，什么都还没有弄好，就急匆匆的上线了，(感觉好草率的样子，٩( ‘ω’ )و ) 没啥关系啦 有什么意见或者问题 可以联系我们—-&gt;对联系我们！(<del>然而你是找不到我哒</del>)</p>
-<p>博主死咸鱼一条，还有点儿发霉的那种,对没错就是要发霉的那种 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PS：还不是因为这几天在下雨</p>
-<h2 id="生活让你吃点儿苦头，你才明白这是生活"><a href="#生活让你吃点儿苦头，你才明白这是生活" class="headerlink" title="生活让你吃点儿苦头，你才明白这是生活"></a>生活让你吃点儿苦头，你才明白这是生活</h2><p>说说自己的感悟吧：</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;感悟的话，这可能说起来就很多了,因为我也不知道怎么来讲，<br>总之 庆祝我们的博客还能活了下来，并且还变身了，大难不死必有<del>祸(hou)</del>后福生活也慢慢地走向了正轨，直到现在 才明白生活是多么的不容易</p>
-<p>还行吧，就先这样了，我们后面在慢慢聊一聊，不要指望能在我这里懂太多，因为我自己都是迷迷糊糊的，我也在慢慢的学前端，（node）是个不错的好东西，值得小小的推荐一下</p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-關於UI" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/關於UI/">關於UI框架的選擇</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/15/關於UI/" class="article-date">
-  <time datetime="2019-02-15T02:22:25.657Z" itemprop="datePublished">2019-02-15</time>
+    <a href="/2019/04/08/關於UI/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.037Z" itemprop="datePublished">2019-04-08</time>
 </a>
     
     
@@ -430,21 +95,148 @@
 </article>
 
   
-    <article id="post-关于我们" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-庆祝博客" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/关于我们/">关于我们</a>
+      <a class="article-title" href="/2019/04/08/庆祝博客/">雨燕博客正式迁移了</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/02/15/关于我们/" class="article-date">
-  <time datetime="2019-02-15T02:22:25.635Z" itemprop="datePublished">2019-02-15</time>
+    <a href="/2019/04/08/庆祝博客/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.034Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>自从上次服务器出现问题之后，就暂停了一段时间，现在我们的博客又正式的上线了，关于文章这类，还需要慢慢改进 由于刚迁移，什么都还没有弄好，就急匆匆的上线了，(感觉好草率的样子，٩( ‘ω’ )و ) 没啥关系啦 有什么意见或者问题 可以联系我们—-&gt;对联系我们！(<del>然而你是找不到我哒</del>)</p>
+<p>博主死咸鱼一条，还有点儿发霉的那种,对没错就是要发霉的那种 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PS：还不是因为这几天在下雨</p>
+<h2 id="生活让你吃点儿苦头，你才明白这是生活"><a href="#生活让你吃点儿苦头，你才明白这是生活" class="headerlink" title="生活让你吃点儿苦头，你才明白这是生活"></a>生活让你吃点儿苦头，你才明白这是生活</h2><p>说说自己的感悟吧：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;感悟的话，这可能说起来就很多了,因为我也不知道怎么来讲，<br>总之 庆祝我们的博客还能活了下来，并且还变身了，大难不死必有<del>祸(hou)</del>后福生活也慢慢地走向了正轨，直到现在 才明白生活是多么的不容易</p>
+<p>还行吧，就先这样了，我们后面在慢慢聊一聊，不要指望能在我这里懂太多，因为我自己都是迷迷糊糊的，我也在慢慢的学前端，（node）是个不错的好东西，值得小小的推荐一下</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-尝试接触Avalonmd" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/尝试接触Avalonmd/">Avalon</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/尝试接触Avalonmd/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.030Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>这段时间做了一下针对IE 浏览器的问题，然后发现很多不兼容IE的地方</p>
+<p>很多的框架也不支持IE  然后去找了找 发现一歌有趣的框架 ヽ(。_°)ノ  avalon</p>
+<p>迷你框架、使用简单、有较好的兼容性、注重性能、没有依赖</p>
+<p>PS: 支持IE6+!!!!! 这才是重点</p>
+<p>大概的看了一下这个框架 感觉和现在常用的VUE 和 AngularJS 有点儿像</p>
+<p>首先从基本的开始吧</p>
+<p><code>https://cdn.staticfile.org/avalon.js/2.2.4/avalon.js</code></p>
+<p>那我们开始写程序员的标配hello-word<br>
+        
+          </p><p class="article-more-link">
+            <a href="/2019/04/08/尝试接触Avalonmd/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-关于非表单元素的监听" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/关于非表单元素的监听/">关于非表单元素的监听</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/关于非表单元素的监听/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.028Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>说到监听事件 很多人都是第一反应 addEventListener 对这个是一种方法，但是有局限的  这个主要针对于表单元素 但是对于非表单元素呢？</p>
+<p>所以我重点要讲的针对于非表单元素的监听事件 DOMNodeInserted </p>
+<p>(我跟你讲这个东西可好玩了)  </p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;selector&quot;).bind(&quot;DOMNodeInserted&quot;,function(e)&#123;</span><br><span class="line">    alert(&quot;我被监听到啦&quot;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<p>代码如上 这样就被监听到了</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-关于我们" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/关于我们/">关于我们</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/关于我们/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.025Z" itemprop="datePublished">2019-04-08</time>
 </a>
     
     
@@ -476,6 +268,224 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
 </article>
 
   
+    <article id="post-vuex的使用" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/vuex的使用/">vuex的一些使用</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/vuex的使用/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.021Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>当你使用vue的时候，那么你可能会对vue组件之间的通信而心态爆炸</p>
+<p>在使用基于vue.js 2.0版本的UI框架element-ui开发一个网站的时候，就会遇到这些问题： 一个页面有很多表单，在试图将这些表单写成一个单文件的时候，但是表单（子组件）里的数据和页面（父组件）交互的时候，他们的通信就会变得非常的麻烦</p>
+<p>以往我们常常使用props来解决父传子的问题，但是子组件却不能直接修改父组件传过来的参数。这时候VUEX 就能体现出他的优点了</p>
+<p>//而你要使用的 只是直接用 this.$store.state.XX</p>
+<p>这样使用方便的了许多，这就是vuex最简单的使用方法，而你在用 <code>this.$store.state.XX</code>的时候，你首先要去定义这个</p>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p>我们需要安装vuex</p>
+<pre><code>npm install vuex --save
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/08/vuex的使用/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-vuex Getter" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/vuex Getter/">vuex getter</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/vuex Getter/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.017Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>emmmm，这都3月了 还是没有记录一些东西，感觉…<br>就像官网说的一样，我们有些时候需要从store里面派生一些状态，比如对列表进行过滤并计数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    return this.$store.state.todos.filter(todo =&gt; todo.done).length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果有多个组件需要用到这种属性， 那么我们需要复制这个函数，或者抽取到一个共享函数然后在多处导入它，无论哪种方式 我们都是很理想。</p>
+<p>Vuex 允许我们子啊store中定义‘getter’ (我们可以认为是store的计算属性) 就像计算机一样，getter的返回值会根据他的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/08/vuex Getter/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-vue-cli使用(一)" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/vue-cli使用(一)/">关于VUE-cli的一些简单的使用(一)</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/vue-cli使用(一)/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.012Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><p>在说vue-cli之前,我们先来聊一聊vue.</p>
+<p>vue是什么? </p>
+<p>是一套用于构建用户界面的渐进式框架.Vue可以用于自底向上逐层应用.其核心库只关注视图层,上手快,还便于整合第三方库或项目[这里就不做过多的描述,可以去看看官文]</p>
+<p>Vue的核心思想:组件化和数据驱动.</p>
+<p>什么是组件化? </p>
+<p>组件化就是将一个整体合理的拆分为一个一个小块(这就是组件),组件可以重复使用.</p>
+<p>数据驱动是前端的未来发展方向,释放了对DOM的操作,让dom随着数据的变化自然而然的变化(大佬说的,记下来),所以我们操作的就是数据</p>
+<p>Vue-cli是快速构建单页面的脚手架.如果在此之前,你选择使用vue-cli来入门的话,就选择引入js文件, [不是别的意思,只是这里使用的东西很多,你没有使用过vue的话,很容易走上一条 (从还没入门到放弃)的道路]</p>
+<p>然后,我们来构建一个很简单的项目吧<br>
+        
+          </p><p class="article-more-link">
+            <a href="/2019/04/08/vue-cli使用(一)/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-main" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/main/">Markdow</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/main/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.010Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>我也不是很清楚markdown的语法 只能记得一点儿或者能用的</p>
+<p>没记错两个回车表示换行</p>
+<h2 id="两个-号表示的是h2的样子"><a href="#两个-号表示的是h2的样子" class="headerlink" title="两个#号表示的是h2的样子"></a>两个#号表示的是h2的样子</h2><h1 id="一个-的话表示h1"><a href="#一个-的话表示h1" class="headerlink" title="一个#的话表示h1"></a>一个#的话表示h1</h1><p>没有的话 就是正常的</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></div>
+<p>上面这种就是使用【数字1左边，tab按键上面的那个】这种一共6个 对齐分布</p>
+<p>More info: <a href="https://www.baidu.com" target="_blank" rel="noopener">Writing</a></p>
+<p>蓝色的这种 应该是</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Writing](https://www.baidu.com)</span><br></pre></td></tr></table></figure></div>
+<p>可以解释为A标签</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-H5的视频解决方案" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/H5的视频解决方案/">H5与视频的那些事</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/H5的视频解决方案/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.008Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <p>不多说上链接<br><a href="https://blog.csdn.net/joyce_lcy/article/details/81391142" title="看我" target="_blank" rel="noopener">https://blog.csdn.net/joyce_lcy/article/details/81391142</a></p>
+<p>有疑问见标题，主要是 mobile video内联播放</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
 
 
   <nav id="page-nav">
@@ -489,7 +499,7 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
   
     <div class="widget-box">
   <div class="avatar-box">
-    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <img class="avatar" src="/images/default-avatar.jpeg" title>
     <h3 class="avatar-name">
       
         恰逢
@@ -515,7 +525,7 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
   <div class="widget-box">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
     </div>
   </div>
 
@@ -527,23 +537,23 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
       <ul>
         
           <li>
-            <a href="/2019/03/18/es7+es8/">ES7 + ES8 一些用法</a>
+            <a href="/2019/04/08/關於UI/">關於UI框架的選擇</a>
           </li>
         
           <li>
-            <a href="/2019/03/11/vuex Getter/">vuex getter</a>
+            <a href="/2019/04/08/庆祝博客/">雨燕博客正式迁移了</a>
           </li>
         
           <li>
-            <a href="/2019/02/15/2018的一些总结吧/">2018的一些总结吧</a>
+            <a href="/2019/04/08/尝试接触Avalonmd/">Avalon</a>
           </li>
         
           <li>
-            <a href="/2019/02/15/H5的视频解决方案/">H5与视频的那些事</a>
+            <a href="/2019/04/08/关于非表单元素的监听/">关于非表单元素的监听</a>
           </li>
         
           <li>
-            <a href="/2019/02/15/关于非表单元素的监听/">关于非表单元素的监听</a>
+            <a href="/2019/04/08/关于我们/">关于我们</a>
           </li>
         
       </ul>
@@ -588,7 +598,4 @@ ps：我有一个不成熟的小建议（每周买一注彩票，只买一注 / 
 </nav>    
   </div>
 </body>
-<script>
-  console.log("                                                                                                    \n                                                              :.,                                   \n                                                               ,:                                   \n                                                                .,                                  \n                                                             '`.,,                                  \n                                                            ,:' ,,:                                 \n                                       `                   ;`;;   ,.                                \n                                      ` ,,`        `.,`   :;.;;: ,,,                                \n                                   .. ``.                ;;;;:;'  ,,                                \n                                ,    `  ; ,.            ;;;;; ;;. `:                                \n                             .        ` ;;;;;::;       +;;;;;,;;;. ;;                               \n                           ,           .;;;;;;;;;'   ''';;;;;; ;;;`,,                               \n                         ,           ` ,;;;;;;:;;;''''''';;;:;; ;:;:,                               \n                       .              `.;;;;;;;;;:'''''':;;;;:;,;;+`:``                             \n                      `                 ;';;;;;;;'''''''';:;;;;;,'+.,,  ,                           \n                    ,                   ;.;;;;;;+++++'''+''''''',++.:                               \n                   `                  ``';'''''':;;;;;:+'''++;'''++.`:     .                        \n                                         +++'+:;;;;;;';;'++++++++.+#`;      ,                       \n                `                        ;#++:;;';;;;;'';++++++++##+.,       `                      \n               .                         :#+;;';;;;;;;'#+'#+;+++++'+`:                              \n              ,        `                  ,#;;:;;;;;:;;;++++'##+++:+.                               \n             ,           :                 ;;;;;;;';;:++'+'++++' +,+                                \n            .          ; ::                ;:;;;;':;++++++'''+++#  +`                               \n                         ::                +:;;':'+'++++++''+# +++ `;             `                 \n                      ,::::               ;;;++'+;;++'+'++''+#  #+++               ,                \n                      :::::               ++;++''+.''';+'+'++#   :++#;              `               \n         ,          .`::::                ;'''''''' ;@@@;+'++#     #'''+                            \n                      :::                :#''''''', +:+`+'++++       #''++++         `              \n                                         ;+''',;;'; ` ` ;'#;++#     ;  +++++++#:      .             \n       ,                               `'++'';;#@:.'  `.'# #+++';'  '    '+++++++#                  \n            ,,` .,.,,     ` ,..  .     +++#'++#,;:    ` ':'.++'# `#'        ++++++++   .            \n      .     ...   ```       ```  .   +##++ ,+'++ `     . :;#'+'',,.'+         ++++++#               \n                                    ;+#++:` ' '+ `      ,;;#'+:`,,++,;;;;.    +++++##+  `           \n     .                             `,`..,,:  ,:++      ::''#+.;;;;,:,,:'''',   +'+++##              \n                                       `,,  :  ++.:` `': .+:. ';;;;,`'; ',''   `;::'###  .          \n    ,                                ..,,   , `,,,,:..::';: .: :,';:..':,,''+   ''++###             \n                                    :..,  `,' :;:::  .;;:: , ;:, ;;::.+.,. '   ::,:,,:+#. ,         \n   `                             ;``:`,    +'+;: ::   ,''  .`,```;::::,,;. :    ,,.;,...,           \n   `                   ;,.,:,    .:;,    , +. ; `,: ,',` :,`;,` `::,,,,,,,         ., ,             \n                     ,,,,,,,,.,   .,  :;,,;,:: `:..'';'` '' : ```:,,,,,,,,,                ,        \n  `                 .,,,#+##,..: :.: :   ,:,,;```.+:;''' ,, : ```#,,,,,,,.                          \n  .                ;,.+++++###,:`::   :  `,,,:..`+::,';''`#+:....#+,,,::.                           \n                  `:,+++++++####.`:,  ,    :':;:;:;;,,::',,+:,.:.,;'' '.                    .       \n                  ::+++++++++###``;.`  .`,  ;:;;;:;;,,;;;` :':.  `; ' ,                     .       \n `            .''',+'+++++++++##``.#,    `:  `.`;:;,,,;:;:''# ``;''`'                               \n ,          `   ::,''++++++++++##.,+#.   : : `:`:,;,::,;;'#. :    ;:;'.,'                           \n .          .++####'''++++++++++#,,,';   :  ',, ':+,:;::;: .,     ,:+;+,+                           \n           ++++++++#'+++++++.++###,, :,  .....  ,.'::;;;;:'..`    :'+,.                      `      \n         .@+++++++++++++++#...,,'+, `., :,..:;,  `''';''+''. .   .,..:;:',                   .      \n         `#+#, '++++#++++,..',,    ,:.`  ,:,;':.:';;';;';;''     .,., ;` ;:,,,:;`           ;+      \n         ;+#,,,` #++##++,.'':'.;``.,,..```,:'''; ;'';;;;;;'+.`   ,`;;   .:::,,,:::;:       ; #      \n        :@#,:++;```#### ,,``;,,```` `:,:,`,:+++;'.:''+'';;'#,   ``,; +:,;:::::::::::;     ;  #      \n        :@,,';,,,` ``   '````,;``````,...`::;+++++''' +'''++'  ``..  ::;::::::::::::::    .  `      \n        ,@,;:,;'. ;;``'+,`````.``````,`  :;;:.+++:::''':+'#+,,````: `:::::::::::::::::,. `  ''. ,'  \n        ,#,+:    ,``;';'.`````:``````,,:`+,,',+# ``:::++'+++`, ``.: :::,::::::::::::::::,::+ ` `#,  \n        :,:;       ;:::````,``;`````.,,, `,.;;#';;;;'::++'+#.`,``:..::..,:;::::::::::::,,,,#.:'+';  \n        :,'+ `      ;: ``````,;`````:,,,;::,.;+;;;;+''#:;+,+.`````.,,:...:;;:;::::::,++;++';::#,  ; \n        :,`#  `.    :;```````::`````:,,,,:,. ';;;;;;++###;+;;``.`````,,..:;;;;;::::,':::,..;:#   ; ,\n        ;..#   :   `.```````;:;`````.,,,,:;`.;';;;;;;;'#+#:#.``.`````.:...;;;;;::::;:        .    : \n        `.+,    , .,:```````::'``````:,,,,: ,;:;;;;;;;;'++; ,```.```.....,;;;;;;:+';         `    + \n .       .' +   ; ,:```````';''``````:,,,,;`::;+;;;;;;'''#':,````.......,,;;;:'+;::               ; \n .       ,;#;  , .:;```````;;;'``````;,,,,:;,,';''';;;;;''`,.`...`,....,,,+'++;;:;                  \n          + ,`  :,,```````';;;;.````..,,::;;;;,`++';;;;;+';.......,::...,,';;;;:                    \n           ;  ' ,,;```````;;;;;..``...:::::;;;';;';;;;;'+++........;:::..;''':              ,       \n               ;.,;.```..';;;;:.......:::::;;:.;;;';;;;+'+ ,.......;:::;;;'                 `       \n  ,        ;     ,.......;;;;;:.......':::;;``.;;;;';;'''+`:.......,:::#+++                         \n  `             ::......;;;;;;;;......'':;;;,:';;;;;''''+##:.......,;:++:;'                         \n            .   :'.....';;;;;;;'......;';;;;``;';;;;+''''''+,.:,...::++;;;:                ,        \n   .         #  ;:....:;:::;;;;;......;++;;;.:::;;;;;+'+#;;,:,::::,+;+;;;                           \n   `            ,:...:';:;;;;;;;.....,;;+;;;;','.;;;'+'+++;;+:::'+++;;;                             \n                 :,,::;;;;;;;;;;.,,,,;:::+;;;;.;';;;''++++;;+++++'+;;;                    .         \n    ,           ;::::,;;;;:;;;;;,,,,,::::::;;;,';';;'+'+#++;::;;;;;;'                               \n                ::::'::;;;:;;;;;;,,,:::::::;;;,+'';##'''+++#:;;;;;;##@,:;,:: :           ,          \n     ,          ::::::::;;:;;;;;;:::;:::::;;;,:''.'''''+++####+;;'########+++::`'                   \n               `:::';:::::;;;;;;;::;;;::::;;;..;;:''''++#######;;;########+++++:;       ,           \n      ,        ':::  :::::::::;::;;;;'::::;;;'.;'''''++########;;;;#######++++''';                  \n               ;::: ,:;::::::::::;;;;':::;;;;;',';,+++++#######;;;;########+++''':';   ,            \n       .       ;;;: :,:::::::::::;;;;'::::';;;'''',;++++#+++###,:;'#########++''''';.               \n        `     ,;;;  ;,.;:::::::::;;;;;:'   ;;;';;',+'+++++++###;'+++###;#'##''''';''; `             \n            .,;;;;    .:;::::,:::;;;;;;;    .;;;;;,;++'+'++++##'':''##+#;'';''''''+';.              \n         . ::.;;;;    ,:::;,,,,::';;;:;.          ,'+++''++:+++#::'#+##';:. +;;;+;+`                \n          .;:.:;;;    :::;::,,,::';;;';             ,;'';,++;++##;'##+'''     ' ;                   \n          .:;.;..:,    ;:.::;:,;:';;;'              ::; `:''++++##'##';;;:         .                \n          `.;'':.:,        :::`::,;;';`              ;   ;:;#'+++###'''''         ,                 \n           ';,.:,;`        :,.  :,:,.::                   .:;++++###';';'        .                  \n            ''',,,              :,'.,';                    :;#++++##''          `                   \n           :'''+'               .::;;;:                     ':'++'##';         `                    \n           #'+#+'               ,;,;;:'                     '+'+;'+#''        .                     \n           +''++                :#+':'#                     '  ;;'';,'       ,                      \n           '''+   `             .+'++++                        ;; .;        .                       \n          +++++    ,             +'''++                                                             \n          ++++#     `            +++##+                                  ,                          \n          ++++#       ,          +''+##                                 `                           \n         `++++#         `        +''##+                               ,                             \n          #++#@          `      `++++;                              ,                               \n          +#+#             `    #++++                             ,                                 \n            '                 . ++++#                           .                                   \n                               #++++#                        ,                                      \n                               ###+##`                   ,`                                         \n                               @####     `,,.`````.,.`                                              \n                               `##+                                                                 \n                                                                                                    \n")
-</script>
 </html>

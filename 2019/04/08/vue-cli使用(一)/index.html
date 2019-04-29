@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>关于VUE-cli的一些简单的使用(一) | 浅缘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="VUE在说vue-cli之前,我们先来聊一聊vue. vue是什么?  是一套用于构建用户界面的渐进式框架.Vue可以用于自底向上逐层应用.其核心库只关注视图层,上手快,还便于整合第三方库或项目[这里就不做过多的描述,可以去看看官文] Vue的核心思想:组件化和数据驱动. 什么是组件化?  组件化就是将一个整体合理的拆分为一个一个小块(这就是组件),组件可以重复使用. 数据驱动是前端的未来发展方向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于VUE-cli的一些简单的使用(一)">
+<meta property="og:url" content="http://sikii.cc/2019/04/08/vue-cli使用(一)/index.html">
+<meta property="og:site_name" content="浅缘">
+<meta property="og:description" content="VUE在说vue-cli之前,我们先来聊一聊vue. vue是什么?  是一套用于构建用户界面的渐进式框架.Vue可以用于自底向上逐层应用.其核心库只关注视图层,上手快,还便于整合第三方库或项目[这里就不做过多的描述,可以去看看官文] Vue的核心思想:组件化和数据驱动. 什么是组件化?  组件化就是将一个整体合理的拆分为一个一个小块(这就是组件),组件可以重复使用. 数据驱动是前端的未来发展方向">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://sikii.oss-cn-beijing.aliyuncs.com/yuyan/vue-cli.png">
+<meta property="og:image" content="https://sikii.oss-cn-beijing.aliyuncs.com/yuyan/%E6%95%88%E6%9E%9C%E5%9B%BE.png">
+<meta property="og:updated_time" content="2019-02-15T02:53:07.213Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于VUE-cli的一些简单的使用(一)">
+<meta name="twitter:description" content="VUE在说vue-cli之前,我们先来聊一聊vue. vue是什么?  是一套用于构建用户界面的渐进式框架.Vue可以用于自底向上逐层应用.其核心库只关注视图层,上手快,还便于整合第三方库或项目[这里就不做过多的描述,可以去看看官文] Vue的核心思想:组件化和数据驱动. 什么是组件化?  组件化就是将一个整体合理的拆分为一个一个小块(这就是组件),组件可以重复使用. 数据驱动是前端的未来发展方向">
+<meta name="twitter:image" content="https://sikii.oss-cn-beijing.aliyuncs.com/yuyan/vue-cli.png">
+  
+    <link rel="alternate" href="/atom.xml" title="浅缘" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+        <a class="nav-item" href="/about" title>个人</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-vue-cli使用(一)" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      关于VUE-cli的一些简单的使用(一)
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/08/vue-cli使用(一)/" class="article-date">
+  <time datetime="2019-04-08T08:28:38.012Z" itemprop="datePublished">2019-04-08</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h2 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h2><p>在说vue-cli之前,我们先来聊一聊vue.</p>
+<p>vue是什么? </p>
+<p>是一套用于构建用户界面的渐进式框架.Vue可以用于自底向上逐层应用.其核心库只关注视图层,上手快,还便于整合第三方库或项目[这里就不做过多的描述,可以去看看官文]</p>
+<p>Vue的核心思想:组件化和数据驱动.</p>
+<p>什么是组件化? </p>
+<p>组件化就是将一个整体合理的拆分为一个一个小块(这就是组件),组件可以重复使用.</p>
+<p>数据驱动是前端的未来发展方向,释放了对DOM的操作,让dom随着数据的变化自然而然的变化(大佬说的,记下来),所以我们操作的就是数据</p>
+<p>Vue-cli是快速构建单页面的脚手架.如果在此之前,你选择使用vue-cli来入门的话,就选择引入js文件, [不是别的意思,只是这里使用的东西很多,你没有使用过vue的话,很容易走上一条 (从还没入门到放弃)的道路]</p>
+<p>然后,我们来构建一个很简单的项目吧<br><a id="more"></a></p>
+<h3 id="构建开始"><a href="#构建开始" class="headerlink" title="构建开始"></a>构建开始</h3><p>首先,没有环境怎么用呢,所以我们要先搭建环境(这里默认你已经有了最基本的环境)</p>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><figcaption><span>install --global vue-cli```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">上面这个是建立vue-cli的基本环境</span><br><span class="line"></span><br><span class="line">现在我们环境有了,就要找个地方建立你的项目了 创建一个空的文件夹之后 [tips:  这里需要你按着shift + 鼠标右键 找到此处打开命令窗口]</span><br></pre></td></tr></table></figure></div>
+<p>vue init webpack hello<br><code>`</code></p>
+<p>hello是项目名称,可以自己定义</p>
+<p>[如果你不会的话 ,可以一路回车下来] 等命令执行完成你就有一个项目了 {tips:你现在可以npm run dev 来启动这个项目}</p>
+<p>现在你可以打开你的浏览器 在地址栏敲入<code>http://localhost:8080</code> ,然后你就能看到你的界面了</p>
+<p>然后我们回到这个项目里面来 打开你的项目</p>
+<p><img src="https://sikii.oss-cn-beijing.aliyuncs.com/yuyan/vue-cli.png" alt></p>
+<p>不出意外的话,你现在有的项目结构就像上图一样,</p>
+<p>build 这个文件夹里面是一些操作文件,使用 <code>npm run *</code>时,就是去执行这里面的文件</p>
+<p>config 配置文件,执行文件需要的配置信息</p>
+<p>node_modules 这个文件夹里面,存放了你项目所有的依赖文件</p>
+<p>src 资源文件,所有的组件以及所有用到的图片都是存放在这个里面的</p>
+<p>static 这里面一般存放的是 引入的第三方静态文件,比如说ueditor之类的</p>
+<p>文件夹说完了,就来说说下面主要 使用的文件了吧 </p>
+<p>首先就是package.json文件 打开这个</p>
+<p>你就能看到当时你在安装的一些信息,如果你觉得你技术可以的话[你可以手写这个]</p>
+<p>这里面的scripts里面 就是你可以执行的命令项<code>npm run</code> + 你要执行的什么语句块</p>
+<p>而dependencies就是你的依赖项了</p>
+<hr>
+<p>对了说到这里,关于编辑器的选择,[个人推荐一下vscode].只是感觉很好用,没有别的意思.</p>
+<p><img src="https://sikii.oss-cn-beijing.aliyuncs.com/yuyan/%E6%95%88%E6%9E%9C%E5%9B%BE.png" alt></p>
+<p>这就是我们执行出来的样子了</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/08/vuex Getter/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            vuex getter
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/08/main/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Markdow</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'yy1123844404',
+  repo: 'articles',
+  oauth: {
+    client_id: '977c601ee2ffa3cf946e',
+    client_secret: '85e17effbf1a27481baa93a6bdc5a6d62ac62c45',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title>
+    <h3 class="avatar-name">
+      
+        恰逢
+      
+    </h3>
+    <p class="avatar-slogan">
+      花 ♂ Q，只要給我十萬元，我...
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/08/關於UI/">關於UI框架的選擇</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/庆祝博客/">雨燕博客正式迁移了</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/尝试接触Avalonmd/">Avalon</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/关于非表单元素的监听/">关于非表单元素的监听</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/关于我们/">关于我们</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 恰逢 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+    <a href="http://www.beianbeian.com/beianxinxi/bc7b14f2-dafd-4082-ab82-870d48c905a5.html">蜀ICP备17041162号-1</a>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">个人</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
